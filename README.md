@@ -51,7 +51,7 @@ module "ec2" {
                 sudo docker run -d -p 80:9898 stefanprodan/podinfo
                 EOF
 }
-``
+```
 6. Im nächsten Schritt definieren wir die Security Groups für die EC2-Instanz als Ressource mit dem Namen `ec2-sg-podinfo`. Wir müssen der Security Group das erstellte VPC zuordnen und definieren 2 Ingress-Rules (jeweils HTTP und SSH-Zugriff von überall zugelassen). Außerdem soll der Egress nach überall möglich sein.
 ```
 resource "aws_security_group" "ec2-sg-podinfo" {
